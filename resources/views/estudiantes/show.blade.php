@@ -9,7 +9,7 @@
 
     <section class="container mt-4">
         <p>
-            Proveedor ID: {{ $estudiante->id }}
+            Estudiante ID: {{ $estudiante->id }}
         </p>
         <p>
             Nombre del estudiante: {{ $estudiante->nombre }}

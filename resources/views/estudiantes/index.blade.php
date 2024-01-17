@@ -1,11 +1,11 @@
 @extends('layouts.app-master')
 
-@sectioendsectionn('content')
+@section('content')
 
 <h1 class="mb-3">Registro de Estudiantes</h1>
 
 <div class="bg-light p-4 rounded">
-    <h1>Lista de estudiantes bajo los cuales se da servicio</h1>
+    <h1>Lista de estudiantes</h1>
     <div class="lead">
         Lista de estudiantes
         <a href="{{ route('estudiantes.create') }}" class="btn btn-primary btn-sm float-right">Crear </a>

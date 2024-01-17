@@ -8,7 +8,7 @@
     </div>
 
     <div class="container mt-4">
-        <form method="POST" action="{{ route('proveedors.update', $proveedor->id) }}">
+        <form method="POST" action="{{ route('estudiantes.update', $estudiante->id) }}">
             @method('patch')
             @csrf
 
@@ -21,7 +21,7 @@
                 @endif
             </div>
             <button type="submit" class="btn btn-primary">Guardar cambios</button>
-            <a href="{{ route('proveedors.index') }}" class="btn btn-default">Atrás</a>
+            <a href="{{ route('estudiantes.index') }}" class="btn btn-default">Atrás</a>
         </form>
     </div>
 
