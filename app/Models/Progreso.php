@@ -13,6 +13,7 @@ class Progreso extends Model
         'progreso',
         'fechaInicio',
         'fechaFin',
+        'cantidadNotas',
         'peso'
     ];
 }

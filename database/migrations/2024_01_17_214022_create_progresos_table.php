@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('progreso');
             $table->date('fechaInicio');
             $table->date('fechaFin');
+            $table->integer('cantidadNotas');
             $table->float('peso');
             $table->timestamps();
         });

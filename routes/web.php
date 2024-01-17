@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EstudiantesController;
 use App\Http\Controllers\NotasController;
+use App\Http\Controllers\ProgresosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
 Route::resource('estudiantes', EstudiantesController::class);
 Route::resource('notas', NotasController::class);
+Route::resource('progresos', ProgresosController::class);
 
