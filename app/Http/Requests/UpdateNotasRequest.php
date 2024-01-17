@@ -22,9 +22,9 @@ class UpdateNotasRequest extends FormRequest
     public function rules()
     {
         return [
-            'nota' => 'required',
-            'fecha' => 'required',
-            'estudiante' => 'required',
+            'nota' => 'numeric|required|between:1,10',
+            'fecha' => 'date|required',
+            'estudianteID' => 'required',
         ];
     }
 }

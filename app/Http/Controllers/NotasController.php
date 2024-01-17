@@ -4,19 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreNotasRequest;
 use App\Http\Requests\UpdateNotasRequest;
+use App\Models\Estudiante;
 use App\Models\Nota;
 use Illuminate\Http\Request;
 
 class NotasController extends Controller
 {
-        /**
+    /**
      * Display all notas
      * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+
+        
         $notas = Nota::latest()->paginate(10);
+
+        foreach ($notas as $nota) {
+            $nota->estudianteObject = Estudiante::where('id', $nota->estudianteID)->first();
+        }
 
         return view('notas.index', compact('notas'));
     }
@@ -28,7 +35,9 @@ class NotasController extends Controller
      */
     public function create()
     {
-        return view('notas.create');
+        return view('notas.create', [
+            'estudiantes' => Estudiante::latest()->get(),
+        ]);
     }
 
     /**
@@ -58,6 +67,7 @@ class NotasController extends Controller
      */
     public function show(Nota $nota)
     {
+        $nota->estudianteObject = Estudiante::where('id', $nota->estudianteID)->first();
         return view('notas.show', [
             'nota' => $nota
         ]);
@@ -74,8 +84,9 @@ class NotasController extends Controller
     {
 
         return view('notas.edit', [
-            'nota' => $nota])
-        ;
+            'nota' => $nota,
+            'estudiantes' => Estudiante::latest()->get(),
+        ]);
     }
     /**
      * Update nota data
@@ -86,7 +97,7 @@ class NotasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Nota $nota, UpdateNotasRequest $request)
-    {
+    {   
         $nota->update($request->validated());
 
         return redirect()->route('notas.index')
