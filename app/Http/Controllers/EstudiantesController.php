@@ -46,7 +46,7 @@ class EstudiantesController extends Controller
         $estudiante->create(array_merge($request->validated()));
 
         return redirect()->route('estudiantes.index')
-            ->withSuccess(__('Estudiante registrada correctamente.'));
+            ->withSuccess(__('Estudiante registrado correctamente.'));
     }
 
     /**
@@ -105,6 +105,6 @@ class EstudiantesController extends Controller
         $estudiante->delete();
 
         return redirect()->route('estudiantes.index')
-            ->withSuccess(__('Estudiante eliminada correctamente.'));
+            ->withSuccess(__('Estudiante eliminado correctamente.'));
     }
 }
