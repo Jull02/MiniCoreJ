@@ -10,6 +10,7 @@
         <li><a href="{{ route('estudiantes.index') }}" class="nav-link px-2 text-white">Estudiantes</a></li> 
         <li><a href="{{ route('notas.index') }}" class="nav-link px-2 text-white">Notas</a></li> 
         <li><a href="{{ route('progresos.index') }}" class="nav-link px-2 text-white">Progresos</a></li> 
+        <li><a href="{{ route('calculadoras.index') }}" class="nav-link px-2 text-white">Calculadora</a></li> 
       </ul>
     </div>
   </div>

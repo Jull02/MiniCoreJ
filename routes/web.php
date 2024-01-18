@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\EstudiantesController;
 use App\Http\Controllers\NotasController;
 use App\Http\Controllers\ProgresosController;
@@ -21,9 +22,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
+    Route::resource('estudiantes', EstudiantesController::class);
+    Route::resource('notas', NotasController::class);
+    Route::resource('progresos', ProgresosController::class);
+
+    Route::group(['prefix' => 'calculadoras'], function () {
+        Route::get('/', 'CalculadoraController@index')->name('calculadoras.index');
+        Route::post('/', 'CalculadoraController@index')->name('calculadoras.index'); 
+    });
 });
 
-Route::resource('estudiantes', EstudiantesController::class);
-Route::resource('notas', NotasController::class);
-Route::resource('progresos', ProgresosController::class);
+// Route::resource('estudiantes', EstudiantesController::class);
+// Route::resource('notas', NotasController::class);
+// Route::resource('progresos', ProgresosController::class);
+
 
