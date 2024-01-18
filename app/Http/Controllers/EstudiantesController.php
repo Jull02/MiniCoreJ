@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class EstudiantesController extends Controller
 {
-        /**
+    /**
      * Display all estudiantes
      * 
      * @return \Illuminate\Http\Response
@@ -74,8 +74,8 @@ class EstudiantesController extends Controller
     {
 
         return view('estudiantes.edit', [
-            'estudiante' => $estudiante])
-        ;
+            'estudiante' => $estudiante
+        ]);
     }
     /**
      * Update estudiante data

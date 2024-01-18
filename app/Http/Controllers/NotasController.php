@@ -18,7 +18,7 @@ class NotasController extends Controller
     public function index()
     {
 
-        
+
         $notas = Nota::latest()->paginate(10);
 
         foreach ($notas as $nota) {
@@ -97,7 +97,7 @@ class NotasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Nota $nota, UpdateNotasRequest $request)
-    {   
+    {
         $nota->update($request->validated());
 
         return redirect()->route('notas.index')

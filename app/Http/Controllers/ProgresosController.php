@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ProgresosController extends Controller
 {
-            /**
+    /**
      * Display all progresos
      * 
      * @return \Illuminate\Http\Response
@@ -74,8 +74,8 @@ class ProgresosController extends Controller
     {
 
         return view('progresos.edit', [
-            'progreso' => $progreso])
-        ;
+            'progreso' => $progreso
+        ]);
     }
     /**
      * Update progreso data
